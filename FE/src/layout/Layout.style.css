@@ -1,0 +1,23 @@
+nav{
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  padding: 0px 10px;
+}
+
+nav a {
+  color: coral;
+  text-decoration: none;
+}
+
+
