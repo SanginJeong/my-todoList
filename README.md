@@ -11,7 +11,7 @@
 
 ### Schema Model
 - User : {email, password}
-- Schedule : {userId, title, isDone, dueDate}
+- Schedule : {userId, title, isDone, date}
 ### Routing
 - 로그인 : /user/login POST
 - 회원가입 : /user POST
