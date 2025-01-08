@@ -6,6 +6,8 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import LogPage from './pages/LogPage/LogPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import PrivatePage from './private/PrivatePage';
+import LogDetailPage from './pages/LogDetailPage/LogDetailPage';
+
 function App() {
   return (
     <>
@@ -13,8 +15,10 @@ function App() {
         <Route path='/' element={<Layout/>}>
           <Route index element={<PrivatePage/>}/>
           <Route path='/login' element={<LoginPage/>}/>
-          <Route path='/logs' element={<LogPage/>}/>
           <Route path='/signup' element={<SignUpPage/>}/>
+          <Route path='/logs' element={<LogPage/>}>
+            <Route path=':id' element={<LogDetailPage/>}/>
+          </Route>
         </Route>
       </Routes>
     </>

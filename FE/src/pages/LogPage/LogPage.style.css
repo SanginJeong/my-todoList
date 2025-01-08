@@ -1,0 +1,12 @@
+.log-page{
+  display: flex;
+  height: 90%;
+}
+
+.log-sidebar-area{
+  flex: 2.5;
+}
+
+.log-detail-area {
+  flex: 7.5;
+}

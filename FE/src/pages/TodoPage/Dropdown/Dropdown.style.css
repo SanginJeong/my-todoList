@@ -1,0 +1,29 @@
+.dropdown{
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.dropdown-menu{
+  padding: 10px 0px;
+}
+
+.dropdown-menu:hover{
+  background-color: coral;
+  color: white;
+}
+
+.dropdown-item {
+  display: none;
+}
+
+.dropdown-item.active {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0;
+}

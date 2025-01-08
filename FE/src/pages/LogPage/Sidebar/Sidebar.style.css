@@ -1,0 +1,19 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid;
+  overflow: scroll;
+  height: 100%;
+  box-shadow: rgba(38, 39, 39, 0.2) 0px 8px 24px;
+}
+
+.log-month{
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.log-month:hover{
+  background-color: coral;
+  color: white;
+}
