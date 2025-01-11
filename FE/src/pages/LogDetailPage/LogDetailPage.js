@@ -17,8 +17,20 @@ const LogDetailPage = () => {
     return acc
   },[])
 
+  const filteredByDateScheduleList = scheduleList.reduce((acc,cur)=>{
+    const existingGroup = acc.find((group)=> group.date === cur.date);
+
+    if(existingGroup) {
+      existingGroup.schedules.push(cur);
+    } else {
+      acc.push({date: cur.date, schedules: [cur]})
+    }
+    return acc
+  },[])
   
 
+  console.log('fff', filteredByDateScheduleList);
+  
   if(isLoading) {
     <Spinner/>
   }
@@ -28,12 +40,8 @@ const LogDetailPage = () => {
   }
   return (
     <div>
-
-      {/* {scheduleList?.map((schedule)=>(
-        <>
-          <div>{schedule.date}</div>
-          <div>{schedule.title}</div>
-        </>
+      {/* {filteredByDateScheduleList?.map((group)=>(
+   
       ))} */}
     </div>
   )
