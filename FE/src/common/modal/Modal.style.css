@@ -68,3 +68,9 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 48rem) {
+  .modal-content {
+    width: 80%;
+  }
+}

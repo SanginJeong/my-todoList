@@ -16,6 +16,7 @@ const Layout = () => {
     sessionStorage.removeItem("token");
     queryClient.setQueryData(["getAuth"], null); // 캐시 즉시 업데이트
     queryClient.invalidateQueries(["getAuth"]); // 서버와 동기화
+    navigate('/');
   };
 
   return (

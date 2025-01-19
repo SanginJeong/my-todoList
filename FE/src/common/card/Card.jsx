@@ -27,6 +27,8 @@ Card.todoTitle = ({children, isDone}) => {
   return <p className={`todo-card-title ${isDone && "todo-checked"}`}>{children}</p>
 }
 
+
+
 Card.todoButtons = ({children}) => {
   return <div className='todo-card-btn-area'>{children}</div>
 }

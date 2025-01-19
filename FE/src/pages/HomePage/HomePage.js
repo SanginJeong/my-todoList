@@ -1,8 +1,21 @@
-import React, { useEffect } from 'react'
-
+import React from 'react'
+import './HomePage.style.css';
+import HomeComponent from './homeComponent/HomeComponent';
+import { introduceList } from './IntroduceList';
 const HomePage = () => {
   return (
-    <div>프라이빗 페이지로 로그인 안했을 때는 홈페이지, 로그인 했을때는 TODO를 볼 수 있는 프라이빗 페이지, 홈페이지에서는 완성된 결과물의 사진들을 안내함</div>
+      <HomeComponent>
+        {introduceList.map((obj)=>(
+          <HomeComponent.row>
+            <HomeComponent.categoryTitle>{obj.categoryTitle}</HomeComponent.categoryTitle>
+            {obj.categoryArea &&
+              <HomeComponent.categoryArea img={obj.categoryArea.img}>
+              {obj.categoryArea.introduce}
+              </HomeComponent.categoryArea>
+            }
+          </HomeComponent.row>
+        ))}
+      </HomeComponent>
   )
 }
 

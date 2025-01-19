@@ -14,6 +14,8 @@
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 카드 그림자 */
   border-radius: 8px;
+  height: 450px;
+  overflow: scroll;
 }
 
 .todo-today {
@@ -45,4 +47,16 @@
 .add-schedule-area > button:hover{
   background-color: white;
   color: coral;
+}
+
+@media screen and (max-width: 48rem) {
+  .todo-area {
+    flex-direction: column;
+  }
+  .todo-card-title {
+    font-size: 14px;
+  }
+  .todo-today, .todo-week {
+    padding: 10px;
+  }
 }
