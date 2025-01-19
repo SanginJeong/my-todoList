@@ -9,4 +9,5 @@
 
 .log-detail-area {
   flex: 7.5;
+  overflow: scroll;
 }

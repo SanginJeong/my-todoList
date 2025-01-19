@@ -10,7 +10,8 @@ import { useGetGroupedSchedulesQuery } from '../../hooks/useGetGroupedSchedules'
 
 const LogPage = () => {
   const {data, isLoading, isError, error} = useGetGroupedSchedulesQuery();
-
+  console.log('ddd',data);
+  
   if(isError) {
     return <ErrorComponent error={error}/>
   }

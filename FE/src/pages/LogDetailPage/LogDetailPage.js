@@ -5,6 +5,8 @@ import Spinner from '../../common/LoadingSpinner/Spinner';
 import ErrorComponent from '../../common/ErrorComponent/ErrorComponent';
 import dayjs from 'dayjs';
 import weekOfYear from "dayjs/plugin/weekOfYear";
+import Card from '../../common/card/Card';
+import Dropdown from '../../common/dropdown/Dropdown';
 
 const LogDetailPage = () => {
   const {id} = useParams();
@@ -40,9 +42,24 @@ const LogDetailPage = () => {
   }
   return (
     <div>
-      {/* {filteredByDateScheduleList?.map((group)=>(
-   
-      ))} */}
+      {filteredByDateScheduleList?.map((group)=>(
+        <Dropdown>
+          <Dropdown.menu>
+            {dayjs(group.date).format('YYYY-MM-DD')}{`  (${group.schedules.length})`}
+          </Dropdown.menu>
+          {group.schedules.map((schedule)=>(
+            <Dropdown.item>
+              <Card>
+                <Card.layout className={"todo-card"}>
+                  <Card.todoTitle isDone={schedule.isDone}>
+                    {schedule.title}
+                  </Card.todoTitle>
+                </Card.layout>
+              </Card>
+            </Dropdown.item>
+          ))}
+        </Dropdown>
+      ))}
     </div>
   )
 }

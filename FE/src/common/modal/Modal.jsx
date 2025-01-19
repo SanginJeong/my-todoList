@@ -1,15 +1,8 @@
 import React from 'react'
 import './Modal.style.css';
 import dayjs from 'dayjs';
-const Modal = ({children, isOpen, onClose}) => {
-  const onClickContent = (e) =>{
-    e.stopPropagation();
-  }
 
-  if(!isOpen){
-    return null
-  }
-
+const Modal = ({children, onClose, onClickContent}) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={onClickContent}>
@@ -19,32 +12,30 @@ const Modal = ({children, isOpen, onClose}) => {
   )
 }
 
-export default Modal
+export default Modal;
 
-// 새로운 일을 추가할 때, 카드를 클릭해서 들어왔을 때
-Modal.form = ({onClose, schedule, onSubmit}) => {
+Modal.addScheduleForm = ({onClose, onSubmit}) => {
   return (
     <form className="todo-form" onSubmit={onSubmit}>
       <label htmlFor="title">제목</label>
-      <input type="text" name="title" placeholder={schedule?.title || "할 일을 입력하세요."}/>
+      <input type="text" name="title" placeholder="할 일을 입력하세요."/>
       <label htmlFor="date">날짜</label>
-      <input type="date" name="date" defaultValue={dayjs(schedule?.date).format('YYYY-MM-DD') || dayjs().format('YYYY-MM-DD')}/>
-      <button type="submit" className="submit-button">
-        {schedule ? "UPDATE" : "ADD"}
-      </button>
+      <input type="date" name="date" defaultValue={dayjs().format('YYYY-MM-DD')}/>
+      <button type="submit" className="submit-button">ADD</button>
       <button type="button" className="modal-close" onClick={onClose}>CLOSE</button>
     </form>
   )
 }
 
-Modal.addScheduleForm = ({onClose, handleAddSchedule}) => {
+Modal.updateScheduleForm = ({onClose,onSubmit, selectedSchedule}) => {  
   return (
-    <Modal.form onClose={onClose} onSubmit={handleAddSchedule}/>
-  )
-}
-
-Modal.updateScheduleForm = ({onClose,schedule}) => {
-  return (
-    <Modal.form onClose={onClose} schedule={schedule}/>
+    <form className="todo-form" onSubmit={onSubmit}>
+      <label htmlFor="title">제목</label>
+      <input type="text" name="title" placeholder={selectedSchedule.title}/>
+      <label htmlFor="date">날짜</label>
+      <input type="date" name="date" defaultValue={dayjs(selectedSchedule.date).format('YYYY-MM-DD')}/>
+      <button type="submit" className="submit-button">UPDATE</button>
+      <button type="button" className="modal-close" onClick={onClose}>CLOSE</button>
+    </form>
   )
 }

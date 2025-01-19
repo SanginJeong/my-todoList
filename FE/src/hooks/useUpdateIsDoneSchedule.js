@@ -1,14 +1,14 @@
 import {useMutation, useQueryClient} from '@tanstack/react-query';
 import api from '../utils/api';
 
-const updateIsDone = async(scheduleId) => {
+const updateIsDoneSchedule = async(scheduleId) => {
   return await api.patch(`/schedule/isDone/${scheduleId}`);
 }
 
 export const useUpdateIsDoneScheduleQuery = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn : updateIsDone,
+    mutationFn : updateIsDoneSchedule,
     onSuccess: (data) => {
       console.log('data',data);
       

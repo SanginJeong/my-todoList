@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import api from "../utils/api";
-const updateScheduleInfo = async({scheduleId,title,date}) => {
-  return await api.patch(`/schedule/${scheduleId}`, {title,date});
+const updateScheduleInfo = async({id,title,date}) => {
+  return await api.patch(`/schedule/${id}`, {title,date});
 }
 
 export const useUpdateScheduleInfoQuery = () => {

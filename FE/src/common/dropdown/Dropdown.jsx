@@ -31,4 +31,3 @@ Dropdown.menu = ({ children, handleDropdown }) => {
 Dropdown.item = ({ children, isOpenDropdown }) => {
   return <ul className={`dropdown-item ${isOpenDropdown ? 'active' : ''}`}>{children}</ul>;
 };
-
